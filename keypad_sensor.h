@@ -6,7 +6,7 @@ class KeypadSensor : public Component, public Sensor {
     public:
 
     static const byte n_rows = 4;
-    static const byte n_cols = 3;
+    static const byte n_cols = 4;
 
     bool keyPublished = false;
 
@@ -14,13 +14,13 @@ class KeypadSensor : public Component, public Sensor {
     unsigned int lastPublish = 0;
     
     char keys[n_rows][n_cols] = {
-    {'1','2','3'},
-    {'4','5','6'},
-    {'7','8','9'},
-    {'*','0','#'}
+    {'1','2','3','A'},
+    {'4','5','6','B'},
+    {'7','8','9','C'},
+    {'*','0','#','D'}
     };
     
-    byte colPins[n_cols] = {D3, D2, D1};
+    byte colPins[n_cols] = {D3, D2, D1, F};
     byte rowPins[n_rows] = {D7, D6, D5, D4};
     
     Keypad myKeypad = Keypad( makeKeymap(keys), rowPins, colPins, n_rows, n_cols); 
