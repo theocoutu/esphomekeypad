@@ -20,8 +20,8 @@ class KeypadSensor : public Component, public Sensor {
     {'*','0','#','D'}
     };
     
-    byte colPins[n_cols] = {D3, D2, D1, F};
-    byte rowPins[n_rows] = {D7, D6, D5, D4};
+    byte colPins[n_cols] = {5, 15, 16, 17};
+    byte rowPins[n_rows] = {19, 21, 22, 23};
     
     Keypad myKeypad = Keypad( makeKeymap(keys), rowPins, colPins, n_rows, n_cols); 
 
